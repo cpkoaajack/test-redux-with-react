@@ -17,7 +17,9 @@ const UserContainer = ({ fetchUser, users }) => {
       ) : (
         <div>
           <h2>User List</h2>
-          {users && users.data && users.data.map((user) => <p>{user.name}</p>)}
+          {users &&
+            users.data.length > 0 &&
+            users.data.map((user) => <p key={user.id}>{user.name}</p>)}
         </div>
       )}
     </div>
@@ -35,5 +37,12 @@ const mapDispatchToProps = (dispatch) => {
     fetchUser: () => dispatch(fetchUser()),
   };
 };
+
+//Version 2
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchUser: () => dispatch(fetchUser(dispatch)),
+//   };
+// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
