@@ -7,7 +7,7 @@ const IceCreamContainer = ({ numOfIceCream, buyIceCream }) => {
   return (
     <div>
       <h1>Number of ice cream(s) {numOfIceCream}</h1>
-      <button onClick={buyIceCream}>Buy cake</button>
+      <button onClick={buyIceCream}>Buy ice cream</button>
     </div>
   );
 };
