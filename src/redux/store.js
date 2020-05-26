@@ -1,18 +1,13 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import cakeReducer from './cake/cakeReducer';
-import iceCreamReducer from './iceCream/iceCreamReducer';
+import rootReducer from './rootReducer';
 //Middleware
 import logger from 'redux-logger';
-
-const rootReducer = combineReducers({
-  cake: cakeReducer,
-  iceCream: iceCreamReducer,
-});
+import thunk from 'redux-thunk';
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(logger))
+  composeWithDevTools(applyMiddleware(logger, thunk))
 );
 
 export default store;

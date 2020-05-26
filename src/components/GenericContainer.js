@@ -39,5 +39,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       return { buyItem: () => alert(`You should not get here`) };
   }
 };
+//If you don't want to subscribe to the change of the store in this component
+//simply pass null to the first parameter of connect()
+//e.g export default connect(null, mapDispatchToProps)(GenericContainer);
 
+//MapDispatchToProps can be passed null as well if you don't want to fire any action in this component
+//e.g export default connect(mapStateToProps, null)(GenericContainer);
 export default connect(mapStateToProps, mapDispatchToProps)(GenericContainer);

@@ -9,6 +9,7 @@ import UseHooksCakeContainer from './components/UseHooksCakeContainer';
 import IceCreamContainer from './components/IceCreamContainer';
 import CakeContainerWithPayload from './components/CakeContainerWithPayload';
 import GenericContainer from './components/GenericContainer';
+import UserContainer from './components/UserContainer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <CakeContainerWithPayload />
         <GenericContainer item={'cake'} />
         <GenericContainer item={'ice cream'} />
+        <UserContainer />
       </div>
     </Provider>
   );
